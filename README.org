@@ -1,0 +1,4 @@
+Ansible role to setup raspberry pi networking
+
+slightely modified version from Geerlingguy's Dramble project:
+https://github.com/geerlingguy/raspberry-pi-dramble

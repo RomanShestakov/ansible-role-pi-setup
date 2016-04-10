@@ -11,3 +11,6 @@ galaxy_info:
     - all
   categories:
   - system
+
+dependencies:
+  - { role: "knopki.locale", version: "v1.0.3", locale_all: "{{raspi_config_locale}}" }

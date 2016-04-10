@@ -1,1 +1,5 @@
 # defauls/main.yml
+# set global locale
+raspi_config_locale: en_US.UTF8
+# set timezone
+raspi_config_timezone: UTC

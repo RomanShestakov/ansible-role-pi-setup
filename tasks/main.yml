@@ -24,3 +24,8 @@
   notify:
     - update hostname
     - delete dhcp leases
+
+- name: Ensure filesystem is resized
+  expand_fs:
+  notify:
+    - reboot

@@ -1,5 +1,10 @@
 # main.yml
 
+- name: Ensure filesystem is resized
+  expand_fs:
+  notify:
+    - reboot
+
 - name: Set the current MAC address for eth0.
   set_fact:
     pi_mac_address: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress }}"
@@ -24,8 +29,3 @@
   notify:
     - update hostname
     - delete dhcp leases
-
-- name: Ensure filesystem is resized
-  expand_fs:
-  notify:
-    - reboot

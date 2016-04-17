@@ -15,7 +15,7 @@ mac_address_mapping:
   "b8:27:eb:92:77:2f":
   #"b8:27:eb:c7:22:7a":
     name: pi3
-    ip: "192.168.1.86"
+    ip: "192.168.1.84"
 
 # Nameservers to use in resolve.conf.
 dns_nameservers:

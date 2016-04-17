@@ -1,20 +1,26 @@
----
+# vars/main.yml
+
+# mapping of what IP address should be assigned to
+# what mac
 
 mac_address_mapping:
-  "b8:27:eb:b2:20:75":
+  #"b8:27:eb:b2:20:75":
+  "b8:27:eb:e7:75:20":
     name: pi1
     ip: "192.168.1.88"
-  "b8:27:eb:8f:c5:31":
+    #"b8:27:eb:8f:c5:31":
+  "b8:27:eb:da:90:64":
     name: pi2
-    ip: "192.168.1.82"
-  "b8:27:eb:92:77:2f":
+    ip: "192.168.1.85"
+#"b8:27:eb:92:77:2f":
+  "b8:27:eb:c7:22:7a":
     name: pi3
-    ip: "192.168.1.84"
+    ip: "192.168.1.86"
 
 # Nameservers to use in resolve.conf.
 dns_nameservers:
   - "8.8.8.8"
   - "8.8.4.4"
 
-ssid: "BTHub5-HFQX2"
-psk: "2aeced3525"
+ssid: ""
+psk: ""

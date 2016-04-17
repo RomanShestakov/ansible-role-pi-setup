@@ -1,10 +1,10 @@
 # Configuration for dhcpcd.
 # See dhcpcd.conf(5) for details.
 
-interface eth0
-static ip_address={{ pi_ip_address }}/24
-static routers=192.168.1.254
-static domain_name_servers={{ dns_nameservers | join(' ') }}
+# interface eth0
+# static ip_address={{ pi_ip_address }}/24
+# static routers=192.168.1.254
+# static domain_name_servers={{ dns_nameservers | join(' ') }}
 
 interface wlan0
 static ip_address={{ pi_ip_address }}/24

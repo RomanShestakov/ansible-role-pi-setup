@@ -25,6 +25,10 @@
     - update hostname
     - delete dhcp leases
 
+- name: mount QNAP NFS
+  action: mount name=/opt/dev src={{ nfs }}:nfs_mount fstype=nfs opts=nolock state=mounted
+  sudo: yes
+
 - name: Ensure filesystem is resized
   expand_fs:
   # notify:

@@ -6,15 +6,15 @@
 mac_address_mapping:
   "b8:27:eb:b2:20:75":
   #"b8:27:eb:e7:75:20":
-    name: pi1
+    name: pi1.local
     ip: "192.168.1.88"
   "b8:27:eb:8f:c5:31":
   #"b8:27:eb:da:90:64":
-    name: pi2
+    name: pi2.local
     ip: "192.168.1.85"
   "b8:27:eb:92:77:2f":
   #"b8:27:eb:c7:22:7a":
-    name: pi3
+    name: pi3.local
     ip: "192.168.1.84"
 
 # Nameservers to use in resolve.conf.

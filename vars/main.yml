@@ -5,13 +5,13 @@
 mac_address_mapping:
   "b8:27:eb:b2:20:75":
     name: pi1
-    ip: "192.168.1.88"
+    ip: "192.168.1.91"
   "b8:27:eb:8f:c5:31":
     name: pi2
-    ip: "192.168.1.85"
+    ip: "192.168.1.92"
   "b8:27:eb:92:77:2f":
     name: pi3
-    ip: "192.168.1.84"
+    ip: "192.168.1.93"
 
 # Nameservers to use in resolve.conf.
 dns_nameservers:

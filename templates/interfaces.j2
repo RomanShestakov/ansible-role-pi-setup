@@ -3,19 +3,21 @@
 auto lo
 iface lo inet loopback
 
-auto eth0
-allow-hotplug eth0
-iface eth0 inet dhcp
+iface eth0 inet manual
+
+# auto eth0
+# allow-hotplug eth0
+# iface eth0 inet dhcp
 
 auto wlan0
 allow-hotplug wlan0
 iface wlan0 inet manual
-wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 
 iface default inet static
 address {{ pi_ip_address }}/24
 netmask 255.255.255.0
 gateway 192.168.1.254
-#dns-nameservers {{ dns_nameservers | join(' ') }}
+dns-nameservers {{ dns_nameservers | join(' ') }}
 
 #iface default inet dhcp

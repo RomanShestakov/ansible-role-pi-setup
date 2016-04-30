@@ -2,7 +2,7 @@
 
 - name: Set the current MAC address for eth0.
   set_fact:
-    pi_mac_address: "{{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress }}"
+    pi_mac_address: "{{ hostvars[inventory_hostname].ansible_eth0_ipv4.macaddress }}"
 
 - name: Set variables based on eth0 MAC address.
   set_fact:

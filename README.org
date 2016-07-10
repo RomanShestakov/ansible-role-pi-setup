@@ -16,24 +16,25 @@ ssh pi@192.168.1.82
 ssh pi@192.168.1.83
 ssh pi@192.168.1.84
 
-** run network setup:
-# how to check agent forward:
-ansible all -a 'ssh -T git@github.com' -i production.ini -vvvv
-# ansible-playbook -i provision/ansible/playbooks/roles/internal/pi_setup/networking/inventory provision/ansible/playbooks/roles/internal/pi_setup/networking/main.yml -k
-ansible-playbook provision/ansible/playbooks/raspberry_init.yml -i provision/ansible/playbooks/pi_inventory --extra-vars="ssid=BTHub5-HFQX2 psk=2aeced3525" --ask-pass --sudo -c paramiko
-ansible-playbook pi_init.yml -i inventory/pi_inventory --extra-vars="ssid=BTHub5-HFQX2 psk=2aeced3525" --ask-pass
+# ** run network setup:
+# # how to check agent forward:
+# ansible all -a 'ssh -T git@github.com' -i inventory/inventory_init.ini --ask-pass -vvvv
 
-ansible-playbook provision/ansible/playbooks/raspberry.yml -i provision/ansible/playbooks/production.ini --ask-pass --sudo -c paramiko --ask-vault-pass
-ansible-playbook raspberry.yml -i production.ini --ask-pass --ask-vault-pass
+** run raspberry pi init script:
+# this will initialize network interface with IP address which
+# inventory.ini will use later
+ansible-playbook pi_init.yml -i inventory/inventory_init.ini --ask-pass
 
+** run setup script:
 ansible-playbook pi.yml -i inventory/inventory.ini --ask-pass --ask-vault-pass
+
 ** How to encrypt ansible-vault:
 ansible-vault encrypt secretvars.yml
 ** TODO how to setup wifi
 /etc/wpa_supplicant/wpa_supplicant.conf
 network={
-   ssid="BTHub5-HFQX2"
-   psk="2aeced3525"
+   ssid=""
+   psk=""
 }
 ** how to connect
 user: pi
@@ -65,3 +66,4 @@ http://www.pidramble.com/wiki/hardware/rgb-led-gpio
 http://www.rs-online.com/designspark/electronics/blog/ten-essential-raspberry-pi-projects
 https://howtotec.net/raspberrypi/raspberry-pi-projects-best-cool-projects-for-your-raspberry-pi-b-2
 https://dantehranian.wordpress.com/2015/07/24/managing-secrets-with-ansible-vault-the-missing-guide-part-1-of-2/
+https://purplebooth.co.uk/blog/2015/05/31/managing-docker/
